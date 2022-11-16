@@ -1,0 +1,134 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/deeeity/mercury-lib/master/src.lua"))()
+local Mercury = loadstring(game:HttpGet("https://raw.githubusercontent.com/deeeity/mercury-lib/master/src.lua"))()
+
+local GUI = Mercury:Create{
+    Name = "Luna by empathy#0363",
+    Size = UDim2.fromOffset(600, 400),
+    Theme = Mercury.Themes.Dark,
+    Link = "Luna.gg"
+}
+
+
+-- Values
+_G.autoWeight = true
+
+
+
+
+-- Functions
+function autoWeight()
+    while _G.autoWeight == true do
+        game:GetService("Players").LocalPlayer.muscleEvent:FireServer("rep")
+        wait(.0001)
+    end
+end
+
+-- Tabs
+local MainTab = GUI:Tab{
+	Name = "Auto Farms",
+	Icon = "rbxassetid://8569322835"
+}
+
+local TpTab = GUI:Tab{
+	Name = "Teleports",
+	Icon = "rbxassetid://8569322835"
+}
+
+local MiscTab = GUI:Tab{
+	Name = "Misc",
+	Icon = "rbxassetid://8569322835"
+}
+
+local ScriptsTab = GUI:Tab{
+	Name = "Scripts",
+	Icon = "rbxassetid://8569322835"
+}
+
+
+
+
+
+-- toggles
+MainTab:Toggle{
+	Name = "Auto (this works on anything)",
+	StartingState = false,
+	Description = nil,
+	Callback = function(Value)
+	    _G.autoWeight = Value
+	    autoWeight() end
+}
+
+
+
+-- Buttons
+TpTab:Button{
+	Name = "Frost Gym",
+	Description = nil,
+	Callback = function()
+	    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2785.7981, 3.71624804, -408.436523, -0.473416895, -1.50020476e-08, -0.880838513, -6.10176158e-08, 1, 1.57630744e-08, 0.880838513, 6.12091711e-08, -0.473416895) end
+}
+
+TpTab:Button{
+	Name = "Mythical Gym",
+	Description = nil,
+	Callback = function()
+	    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2250.77808, 28.6999931, 1073.22668, 0, 0, -1, 0, 1, 0, 1, 0, 0) end
+}
+
+
+TpTab:Button{
+	Name = "Inferno Gym",
+	Description = nil,
+	Callback = function()
+	    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-6928.60205, 3.7162621, -1282.15491, 0.176068798, 1.51869362e-08, -0.984377861, 1.88014448e-09, 1, 1.57642415e-08, 0.984377861, -4.62636374e-09, 0.176068798) end
+}
+
+TpTab:Button{
+	Name = "Legends Gym",
+	Description = nil,
+	Callback = function()
+	    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(4429.34619, 987.869263, -3856.02612, 0.199969664, 2.08257145e-08, -0.979802072, 5.55814701e-08, 1, 3.25987486e-08, 0.979802072, -6.09775981e-08, 0.199969664) end
+}
+
+TpTab:Button{
+	Name = "Spawn",
+	Description = nil,
+	Callback = function()
+	    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(6.96376419, 3.71624947, 135.335541, 0.997399569, 5.73589887e-08, -0.072069779, -6.32247321e-08, 1, -7.91085242e-08, 0.072069779, 8.34594047e-08, 0.997399569) end
+}
+
+TpTab:Button{
+	Name = "Beach",
+	Description = nil,
+	Callback = function()
+	    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-17.1051369, 3.71624899, -489.742584, -0.999166131, -9.36296196e-09, 0.0408291034, -8.80651552e-09, 1, 1.38085232e-08, -0.0408291034, 1.34374467e-08, -0.999166131) end
+}
+
+TpTab:Button{
+	Name = "Tiny Gym",
+	Description = nil,
+	Callback = function()
+	    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-35.8838196, 3.86919379, 1970.00427, 0.994699597, 1.67685883e-08, -0.102823772, -1.8437996e-08, 1, -1.52851722e-08, 0.102823772, 1.71000192e-08, 0.994699597) end
+}
+
+TpTab:Button{
+	Name = "Muscle King Gym",
+	Description = nil,
+	Callback = function()
+	    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-8756.05469, 23.3582916, -5824.72949, -0.994619906, -7.58444187e-08, 0.103591591, -7.97509827e-08, 1, -3.35692789e-08, -0.103591591, -4.16502033e-08, -0.994619906) end
+}
+
+MiscTab:Button{
+	Name = "Size 1",
+	Description = nil,
+	Callback = function()
+game:GetService("ReplicatedStorage").rEvents.changeSpeedSizeRemote:InvokeServer("changeSize",1) end
+}
+
+ScriptsTab:Button{
+	Name = "Orca",
+	Description = nil,
+	Callback = function()
+	    loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/richie0866/orca/master/public/latest.lua"))() end
+}
+
